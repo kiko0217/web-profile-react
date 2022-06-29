@@ -7,6 +7,7 @@ const BlogDetail = () => {
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   useEffect(() => {
+    document.title = 'Blog Detail'
     fetch(`https://api.spaceflightnewsapi.net/v3/articles/${params.id}`)
     .then(res => {
       if (res.ok) {
@@ -31,17 +32,17 @@ const BlogDetail = () => {
     )
   }
   return (
-    <section>
+    <section className='section'>
       { loading ?(
         <h3><i>Loading get article ...</i></h3>
       ):(
-          <>
-            <h1>{article.title}</h1>
-            <time>{new Date(article.publishedAt).toLocaleDateString()}</time>
-            <img src={article.imageUrl} alt={article.title} />
-            <p>{article.summary}</p>
-            <p>Source: <a href={article.url} target="_blank" rel='noreferrer'>{article.newsSite}</a></p>
-          </>
+          <article className='article'>
+            <h3 className='article-title'>{article.title}</h3>
+            <time className='article-time'>{new Date(article.publishedAt).toLocaleDateString()}</time>
+            <img src={article.imageUrl} alt={article.title} className='article-image'/>
+            <p className='article-summary'>{article.summary}</p>
+            <p className='article-source'>Source: <a href={article.url} target="_blank" rel='noreferrer'>{article.newsSite}</a></p>
+          </article>
       )}
 
     </section>

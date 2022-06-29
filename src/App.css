@@ -1,38 +1,132 @@
 .App {
+  width: 80%;
+  margin: 0 auto;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: white;
+  border: 2px solid #eee;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.brand {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 20px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.nav {
+  border-top: 2px solid #eee;
+  width: 80%;
+  margin: auto ;
+  border-bottom: 2px solid #eee;
+  display:flex;
+}
+.nav-item {
+  display: inline-block;
+  /* width: calc(100% / 4); */
+  flex: 1 1 0;
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-item:hover {
+  background-color: #eee;
+}
+.nav-item:not(:last-child) {
+  border-right: 2px solid #eee;
+}
+
+.section {
+  width: 70%;
+  margin: auto;
+  padding: 30px;
+  text-align: justify;
+}
+.section-title {
+  margin-top: 0;
+}
+
+.section-description {
+  line-height: 26px;
+}
+
+.articles {
+  border-top: 2px solid #eee;
+}
+.article {
+  border-bottom: 2px solid #eee;
+  padding: 20px 0;
+}
+.article-title {
+  margin-top: 0;
+  text-align: left;
+}
+.article-title a {
+  color: #000;
+  text-decoration: none;
+}
+
+.article-title a:hover {
+  color: blue;
+}
+
+.article-time {
+  color: #999;
+  font-size: 12px;
+}
+
+.article-image {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+.article-summary {
+  line-height: 26px;
+  margin-top: 0;
+}
+
+.article-source {
+  color: #999;
+}
+
+.article-source a {
+  text-decoration: none;
+}
+
+.article-source a:hover {
+  color: blue;
+}
+
+@media (max-width: 375px) {
+  .nav-item {
+    padding: 1px;
+    font-size: 70%;
   }
-  to {
-    transform: rotate(360deg);
+  .section-title {
+    margin-top: 0;
+    font-size: 100%;
+    text-align: left;
+  }
+  .section-description {
+    font-size: 70%;
+    line-height:normal;
+  }
+  .section ul {
+    font-size: 60%;
+  }
+  .articles {
+    font-size: 70%;
+  }
+  .article-summary {
+    line-height: normal;
+    font-size: 70%;
+  }
+  .article-source {
+    font-size: 70%;
+  }
+}
+@media (min-width:1080px) {
+  .App {
+    width: 864px;
   }
 }

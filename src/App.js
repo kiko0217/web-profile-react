@@ -9,11 +9,12 @@ import Profile from './Pages/Profile';
 function App() {
   return (
     <div className="App">
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/profile">Profile</Link>
-        <Link to="/contact">Contact</Link>
+      <div className="brand">Website Anzis Kita</div>
+      <nav className='nav'>
+        <Link className='nav-item' to="/">Home</Link>
+        <Link className='nav-item' to="/blog">Blog</Link>
+        <Link className='nav-item' to="/profile">Profile</Link>
+        <Link className='nav-item' to="/contact">Contact</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />}></Route>
